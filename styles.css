@@ -1,3 +1,10 @@
 *{
     background-color:aqua;
+    
+}
+@font-face {
+    font-family: 'Merriweather';
+    font-style: normal;
+    src: url('utilities/fonts/Merriweather\ \(1\)/static/Merriweather-Regular.ttf') format('truetype');
+    font-weight: 400;
 }
