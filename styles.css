@@ -1,10 +1,40 @@
-*{
-    background-color:aqua;
-    
-}
+
 @font-face {
     font-family: 'Merriweather';
     font-style: normal;
     src: url('utilities/fonts/Merriweather\ \(1\)/static/Merriweather-Regular.ttf') format('truetype');
     font-weight: 400;
+}
+
+
+
+body {
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    color: #555555;
+}
+
+header {
+    background-color: #333333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items:center;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50%;
+}
+header nav {
+    grid-row: 1/ 5  ;
+    grid-column:2 / 3;
+    justify-content: center
+}
+.navbar { 
+
+    display: flex;
+    align-items: center;
+    background-color: #444444;
+    justify-content: space-between;
 }
