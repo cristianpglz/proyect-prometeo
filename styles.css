@@ -9,6 +9,7 @@
 
 
 body {
+
     padding: 5%;
     background-image: url('utilities/images/fondo.png');
     background-repeat: no-repeat;
@@ -17,7 +18,8 @@ body {
     background-size: cover;
     font-family: 'Merriweather', serif;
     color: rgb(124, 124, 124);
-    
+    min-width: 400px;
+    font-weight: ;
 }
 
 nav {
@@ -33,8 +35,7 @@ nav {
     left: 0;
     padding: 0 4%;
     box-sizing: border-box;
-    z-index: 1000;
-}
+    z-index: 1000;}
 .logo {
     width: 50px;
     height: 50px;
@@ -50,9 +51,9 @@ nav {
     text-decoration-thickness: 2px;
     text-decoration-style: solid;
     text-decoration-color: rgb(0, 0, 0);
-    
+    min-width: 400px;
     }
-    a:-webkit-any-link {
+a:-webkit-any-link {
     color: rgb(0, 162, 255);
     cursor: pointer;
     text-decoration: none;
@@ -63,45 +64,26 @@ a:hover {
     font-size: 18px;
 }
 
-.open-menu {
-    display: none;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-}
-.closed-menu {
-    display: none;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-}
-@media screen and (max-width: 768px) {
-    
-    .nav-links {
-        display: none;
-    }
-    .open-menu {
-        display: block;
 
+@media screen and (max-width: 600px) {
+    body {
+        padding: 10%;
     }
-}
-
-@media screen and (open-menu:active) {
-    .nav-links {
-        display: flex;
+    nav {
         flex-direction: column;
-        position: absolute;
-        top: 6%;
-        left: 0;
-        width: 100%;
-        background-color: rgb(255, 255, 255);
-        padding: 20px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        align-items: center;
+        height: 100%;
+        padding: 2% 0;
+        width: 10%;
+
     }
-    .open-menu {
-        display: none;
+    .nav-links {
+        flex-direction: column;
+        gap: 20px;
     }
-    .closed-menu {
-        display: block;
+    .logo {
+        width: 40px;
+        height: 40px;
     }
+    
 }
