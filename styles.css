@@ -19,7 +19,7 @@ body {
     font-family: 'Merriweather', serif;
     color: rgb(124, 124, 124);
     min-width: 400px;
-    font-weight: ;
+    font-weight: 1000;
 }
 
 nav {
@@ -64,7 +64,12 @@ a:hover {
     font-size: 18px;
 }
 
-
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
 @media screen and (max-width: 600px) {
     body {
         padding: 10%;
