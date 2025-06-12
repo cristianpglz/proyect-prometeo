@@ -9,7 +9,8 @@
 
 
 body {
-
+    display: grid;
+    grid-area:"";
     padding: 5%;
     background-image: url('utilities/images/fondo.png');
     background-repeat: no-repeat;
@@ -70,6 +71,39 @@ a:hover {
     border-radius: 50%;
     object-fit: cover;
 }
+.tarjet_user {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+    align-content: space-evenly;
+    background-color: #000000bb;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 10px 9px rgb(0, 0, 0);
+    
+}
+.tarjet_info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 20px;
+}
+.tarjet_title, .tarjet_content {
+    display: flex;
+    font-size: 15px;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px 0 0 10px;
+    max-width: 870px;
+}
+.apellido {
+    width: max-content;}
+
 @media screen and (max-width: 600px) {
     body {
         padding: 10%;
@@ -91,4 +125,7 @@ a:hover {
         height: 40px;
     }
     
+}
+@media screen and (max-width: 400px) {
+
 }
