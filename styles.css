@@ -93,7 +93,7 @@ a:hover {
     margin: 20px 0;
     box-shadow: 0 10px 9px rgb(0, 0, 0);
     max-width: 700px;
-    
+    min-width: 400px;
     
 }
 .tarjet_info {
@@ -118,34 +118,33 @@ a:hover {
 .skills-image {
     width: 30%;
     object-fit: cover;
+    padding: 30px;
+
 }
 #skills {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    align-items: center;
 }
-@media screen and (max-width: 600px) {
-    body {
-        padding: 10%;
-    }
-    nav {
-        flex-direction: column;
-        align-items: center;
-        height: 100%;
-        padding: 2% 0;
-        width: 10%;
-
-    }
+@media screen and (max-width: 987px) {
     .nav-links {
-        flex-direction: column;
-        gap: 20px;
+        font-size: 10px;
+        padding: 0px;
+        gap: 15px;
+    }
+    .tarjet_user {
+        grid-template-columns: 1fr;
+        padding: 0px;
     }
     .logo {
-        width: 40px;
-        height: 40px;
+        display: none;
     }
-    
-}
-@media screen and (max-width: 400px) {
-
+    #skills{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        align-items: start;
+        flex-direction: column;
+    }
 }
