@@ -62,15 +62,19 @@ nav {
 .logo {
     width: 50px;
     height: 50px;
+    transition: 1s;
 }
-
+.initial-botom :hover {
+    transition: 1s;
+    transform: scale(1.5);
+}
 /* ====== MAIN CONTENT ====== */
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
-    padding: 20px;
+    gap: 50px;
+    padding: 20%;
 }
 
 /* TARJET USER */
@@ -81,7 +85,8 @@ main {
     background-color: #000000bb;
     border-radius: 10px;
     padding: 20px;
-    max-width: 700px;
+    max-width: 900px;
+    min-height: 350px;
     width: 100%;
     box-shadow: 0 10px 9px #000;
     gap: 20px;
@@ -115,25 +120,113 @@ main {
 #about {
     padding: 30px;
     border-radius: 10px;
-    max-width: 800px;
+    max-width: 900px;
     color: #fff;
+    padding-top: 50%;
+    padding-bottom: 25%;
 }
 
 /* SKILLS */
 #skills {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
-    padding: 20px;
+    max-width: 900px;
+    padding-top: 25%;
+    padding-bottom: 25%;
+    flex-direction: column;
 }
 
 .skills-image {
-    max-width: 300px;
-    width: 100%;
+    width: 25%;
     height: auto;
     object-fit: contain;
     border-radius: 8px;
+    max-width: 900px;
+}
+/*TiTULATIONS*/
+#titulation {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 25%;
+    padding-bottom: 25%;
+    max-width: 900px;
+
+}
+.titulation-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    justify-items: center;
+}
+.titulations {
+    width: 100%;
+    border-radius: 15px;
+    object-fit: contain;
+    background-color: #000000; /* contraste si las imágenes son claras */
+    padding: 10px;
+    height: auto; /* o auto si quieres mantener proporción */
+}
+.titulations img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+.titulations-ESO {
+    grid-row: 6;
+    grid-column: 1 / -1; /* Ocupa toda la fila */
+    width: 50%;
+    
+}
+/* PROJECTS */
+#projects {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 25%;
+    padding-bottom: 25%;
+    max-width: 900px;
+}
+.projects-list {
+    transition: 1s;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+}
+.projects-list :hover {
+    transition: 1s;
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.336);
+
+}
+.project-item {
+    transition: 1s;
+    background-color: #000000bb;
+    border-radius: 15px;
+    padding: 20px;
+    
+}
+.project-item :hover {
+    background-color: rgba(0, 0, 0, 0);
+
+}
+.projects-image {
+    transition: 1s;
+    width: 100%;
+    object-fit: contain;
+    padding: 10px;
+    height: auto; /* o auto si quieres mantener proporción */
+    border-radius: 30px;
+}
+
+.more-projects {
+    grid-row: 3;
+    grid-column: 1 / 3; /* Ocupa toda la fila */
 }
 
 /* FOOTER */
@@ -173,9 +266,17 @@ footer {
     .skills-image {
         max-width: 60%;
     }
+    #titulation {
+        flex-direction: column;
+        align-items: center;
+    }
+    .titulation-list {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media screen and (max-width: 480px) {
+
     nav {
         flex-direction: row;
         flex-wrap: wrap;
@@ -200,8 +301,15 @@ footer {
     body {
         padding-top: 60px;
     }
-    .skills-image {
-        max-width: 40%;
+    #titulation {
+        flex-direction: column;
+        align-items: center;
+    }
+    .titulation-list {
+        grid-template-columns: 1fr;
+    }
+    .titulations-ESO {
+        width: 100%;
     }
 }
-
+/* ====== END OF MEDIA QUERIES ====== */
