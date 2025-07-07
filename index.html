@@ -54,9 +54,12 @@
             </section>
             <section id="skills">
                 <h2>Habilidades</h2>
-                <img src="./utilities/images/HTML-skills.png" alt="HTML " class="skills-image">
-                <img src="./utilities/images/CSS-skills.png" alt="skills image" class="skills-image">
-                <img src="./utilities/images/js-skills.png" alt="skills image" class="skills-image">
+                   <ol class="skills-list">
+                        <li class="skills-tarjet"><img src="./utilities/images/HTML-skills.png" alt="HTML image" class="skills-image"></li>
+                        <li class="skills-tarjet"><img src="./utilities/images/CSS-skills.png" alt="CSS image" class="skills-image"></li>
+                        <li class="skills-tarjet"><img src="./utilities/images/JS-skills.png" alt="JS image" style="width: 70%;" class="skills-image"></li>
+                        <li class="skills-tarjet"><img src="./utilities/images/GIT-skills.png" alt="GIT image" class="skills-image"></li>
+                    </ol>
             </section>
             <section id="titulation">
                 <h2>Titulaciones</h2>
@@ -127,11 +130,30 @@
             </section>
             <section id="contact">
                 <h2>Contacto</h2>
-                <p class="contact"></p>
+                
+                <form class="contact" action="" method="post">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" placeholder="YOUR NAME"required>
+                        
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email"placeholder="ejemplo@ejemplo.com" required>
+
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" rows="3" placeholder="ESCRIBETU MENSAJE AQUI" required></textarea>
+                        
+                    <button type="submit">Enviar</button>
+                </form>
             </section>
         </main>
         <footer>
-            <p>&copy; 2023 Cristian. Todos los derechos reservados.</p>
+            <p>Redes Sociales</p>
+            <ul id="social-media-list">
+                <li class="social-media"><a class="social-media styles-media" href=""><img src="./utilities/social-images/instagram-img.png" alt="image instagram">INSTAGRAM</a></li>
+                <li class="social-media"><a class="social-media styles-media" href=""><img src="./utilities/social-images/discord-img.png" alt="image discord">DISCORD</a> </li>
+                <li class="social-media"><a class="social-media styles-media" href=""><img src="./utilities/social-images/gmail-img.png" alt="image gmail">GMAIL</a> </li>
+            </ul>
+            
+            <p>&copy; 2025 Cristian. Todos los derechos reservados.</p>
         </footer>
     </body>
     

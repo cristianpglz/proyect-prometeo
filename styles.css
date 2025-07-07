@@ -1,16 +1,26 @@
+
+/* ====== fonts ====== */
 @font-face {
     font-family: 'Merriweather';
     font-style: normal;
     src: url('utilities/fonts/Merriweather\\ \\(1\\)/static/Merriweather-Regular.ttf') format('truetype');
     font-weight: 400;
 }
-
+/* ====== GLOBAL STYLES ====== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul,ol {
+    list-style: none;
+}
+/* ====== BODY ====== */
 body {
     background-image: url('utilities/images/fondo.png');
     background-repeat: no-repeat;
@@ -21,8 +31,16 @@ body {
     color: #fff;
     font-size: 1rem;
     padding-top: 60px;
+    
 }
-
+/* ====== MAIN CONTENT ====== */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 20%;
+}
 /* ====== HEADER & NAV ====== */
 nav {
     background-color: #000;
@@ -42,22 +60,49 @@ nav {
 
 .nav-links {
     display: flex;
-    list-style: none;
     gap: 10px;
     flex-direction: row;
     flex-wrap: nowrap;
 }
 
 .nav-links a {
-    color: #00a2ff;
-    text-decoration: none;
-    transition: 0.2s;
-    font-size: 0.9rem;
-    padding: 5px;
+  position: relative;
+  color: white;
+  transition: 0.3s;
+  font-size: 0.9rem;
+  padding: 5px;
+  background: linear-gradient(90deg, #00a2ff 50%, white 50%);
+  background-size: 200%;
+  background-position: right;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #00a2ff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+
 }
 
 .nav-links a:hover {
-    font-size: 1rem;
+  transition: 0.3s;
+  transform: scaleX(0);
+  font-size: 1rem;
+  background-position: left;
+
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
 }
 .logo {
     width: 50px;
@@ -68,16 +113,9 @@ nav {
     transition: 1s;
     transform: scale(1.5);
 }
-/* ====== MAIN CONTENT ====== */
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
-    padding: 20%;
-}
 
-/* TARJET USER */
+
+/* ====== TARJET USER ====== */
 .tarjet_user {
     display: flex;
     flex-direction: row;
@@ -88,7 +126,7 @@ main {
     max-width: 900px;
     min-height: 350px;
     width: 100%;
-    box-shadow: 0 10px 9px #000;
+    box-shadow: 17px 14px 16px 3px #000;
     gap: 20px;
     justify-content: space-evenly;
 }
@@ -116,7 +154,7 @@ main {
     color: #fff;
 }
 
-/* ABOUT */
+/* ====== ABOUT ====== */
 #about {
     padding: 30px;
     border-radius: 10px;
@@ -126,25 +164,37 @@ main {
     padding-bottom: 25%;
 }
 
-/* SKILLS */
+/* ====== SKILLS ======*/
 #skills {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    max-width: 900px;
+    max-width: 800px;
     padding-top: 25%;
     padding-bottom: 25%;
     flex-direction: column;
 }
-
+.skills-list {
+    list-style: none;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+.skills-tarjet{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
 .skills-image {
-    width: 25%;
+    width: 100%;
     height: auto;
     object-fit: contain;
     border-radius: 8px;
     max-width: 900px;
 }
-/*TiTULATIONS*/
+/* ====== TiTULATIONS ======*/
 #titulation {
     display: flex;
     flex-direction: column;
@@ -165,9 +215,10 @@ main {
     width: 100%;
     border-radius: 15px;
     object-fit: contain;
-    background-color: #000000; /* contraste si las imágenes son claras */
+    background-color: #000000;
     padding: 10px;
-    height: auto; /* o auto si quieres mantener proporción */
+    height: auto; 
+    min-width: 300px;
 }
 .titulations img {
     width: 100%;
@@ -177,11 +228,11 @@ main {
 }
 .titulations-ESO {
     grid-row: 6;
-    grid-column: 1 / -1; /* Ocupa toda la fila */
+    grid-column: 1 / -1;
     width: 50%;
     
 }
-/* PROJECTS */
+/* ====== PROJECTS ====== */
 #projects {
     display: flex;
     flex-direction: column;
@@ -220,21 +271,169 @@ main {
     width: 100%;
     object-fit: contain;
     padding: 10px;
-    height: auto; /* o auto si quieres mantener proporción */
+    height: auto;
     border-radius: 30px;
+    min-width: 300px;
 }
 
 .more-projects {
     grid-row: 3;
-    grid-column: 1 / 3; /* Ocupa toda la fila */
+    grid-column: 1 / 3;
+}
+/* ====== CONTACT ====== */
+#contact {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    padding: 20px;
+    background-color: #000000bb;
+    border-radius: 10px;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 17px 20px 9px #000;
+    justify-content: space-between;
+    flex-direction: row;
+    min-width: 400px;
+}
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 25%;
+    padding-bottom: 25%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-right: 40%;
+}
+form textarea, form input button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #000;
+    font-size: 1rem;
+}
+form button {
+    width: 100px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+form button:hover {
+    background-color: #00a2ff;
+    color: #fff;
+    transition: 0.3s;
+}
+form button {
+  position: relative;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  background: none;
+  color: white;
+  background: linear-gradient(90deg, #00a2ff 50%, white 50%);
+  background-size: 200%;
+  background-position: right;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: transform 0.3s ease, background-position 0.5s ease;
 }
 
-/* FOOTER */
+form button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #00a2ff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+form button:hover {
+  background-position: left;
+}
+
+form button:hover::after {
+  transform: scaleX(1);
+}
+/* ====== FOOTER ====== */
 footer {
     text-align: center;
     padding: 40px 10px;
     font-size: 0.9rem;
     color: #aaa;
+    background-color: #000000;
+}
+
+.styles-media {
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+
+  /* Para el efecto de color progresivo en texto si lo deseas */
+  background: linear-gradient(90deg, #00a2ff 50%, white 50%);
+  background-size: 200%;
+  background-position: right;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: background-position 0.5s ease;
+}
+
+.styles-media::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #00a2ff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.styles-media:hover {
+  background-position: left;
+}
+
+.styles-media:hover::after {
+  transform: scaleX(1);
+}
+#social-media-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 200px;
+    margin: 0 auto;
+    padding: 20px;
+    align-items: flex-start;
+}
+.social-media {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    padding-top: 2px;
+    transition: 0.3s;
+}
+.social-media :hover {
+    transition: 0.3s;
+    transform: scale(1.1);
+    color: #00a2ff;
+}
+.social-media > a > img  {
+    width: 30px;
 }
 
 /* ====== MEDIA QUERIES ====== */
@@ -243,6 +442,7 @@ footer {
     .tarjet_user {
         padding: 15px;
         flex-wrap: wrap;
+        min-width: 300px;
     }
 
     .profile-image {
@@ -264,7 +464,10 @@ footer {
         align-items: center;
     }
     .skills-image {
-        max-width: 60%;
+        width: 100%;
+        height: auto;
+        max-width: 600px;
+        min-width: 150px;
     }
     #titulation {
         flex-direction: column;
@@ -301,15 +504,30 @@ footer {
     body {
         padding-top: 60px;
     }
-    #titulation {
+    #titulation,#projects {
         flex-direction: column;
         align-items: center;
     }
-    .titulation-list {
+    .titulation-list,.projects-list {
         grid-template-columns: 1fr;
     }
     .titulations-ESO {
         width: 100%;
     }
+    .more-projects {
+        grid-row: 3;
+        grid-column: 1 / 2;
+    }
+
+    #contact {
+        flex-wrap: wrap;
+        min-width: 300px;
+    }
+    .contact {
+        padding-right: 0;
+        width: 100%;
+     }
+     .nav-links {
+        gap: 5px;
+     }
 }
-/* ====== END OF MEDIA QUERIES ====== */
