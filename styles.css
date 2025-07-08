@@ -20,6 +20,9 @@ a {
 ul,ol {
     list-style: none;
 }
+html {
+  scroll-behavior: smooth;
+}
 /* ====== BODY ====== */
 body {
     background-image: url('utilities/images/fondo.png');
@@ -156,12 +159,28 @@ nav {
 
 /* ====== ABOUT ====== */
 #about {
-    padding: 30px;
+    
     border-radius: 10px;
     max-width: 900px;
     color: #fff;
-    padding-top: 50%;
+    margin-top: 50%;
+    padding: 20px;
     padding-bottom: 25%;
+    background-color: rgba(0, 0, 0, 0.7);
+    
+}
+.about-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ddd;
+    margin-top: 20px;
+    text-align: justify;
+}
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 /* ====== SKILLS ======*/
