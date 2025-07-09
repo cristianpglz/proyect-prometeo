@@ -6,6 +6,17 @@
     src: url('utilities/fonts/Merriweather\\ \\(1\\)/static/Merriweather-Regular.ttf') format('truetype');
     font-weight: 400;
 }
+/* ====== ROOT VARIABLES ====== */
+:root {
+    --primary-color: #00A2FF;
+    --secondary-color: #fff;
+    --background-color: #000;
+    --text-color: #ddd;
+    --link-color: #00A2FF;
+    --hover-color: rgba(0, 162, 255, 0.7);
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --target-body-color: #000000bb;
+}
 /* ====== GLOBAL STYLES ====== */
 * {
     margin: 0;
@@ -23,6 +34,14 @@ ul,ol {
 html {
   scroll-behavior: smooth;
 }
+h1, h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid var(--primary-color);
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
 /* ====== BODY ====== */
 body {
     background-image: url('utilities/images/fondo.png');
@@ -31,7 +50,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     font-family: 'Merriweather', serif;
-    color: #fff;
+    color: var(--text-color);
     font-size: 1rem;
     padding-top: 60px;
     
@@ -46,8 +65,8 @@ main {
 }
 /* ====== HEADER & NAV ====== */
 nav {
-    background-color: #000;
-    border-bottom: 1px solid #ddd;
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--text-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -70,11 +89,11 @@ nav {
 
 .nav-links a {
   position: relative;
-  color: white;
+  color: var(--link-color);
   transition: 0.3s;
   font-size: 0.9rem;
   padding: 5px;
-  background: linear-gradient(90deg, #00a2ff 50%, white 50%);
+  background: linear-gradient(90deg, var(--primary-color) 50%, var(--secondary-color) 50%);
   background-size: 200%;
   background-position: right;
   -webkit-background-clip: text;
@@ -89,7 +108,7 @@ nav {
   left: 0;
   height: 2px;
   width: 100%;
-  background-color: #00a2ff;
+  background-color: var(--link-color);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
@@ -123,13 +142,13 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: #000000bb;
+    background-color: var(--target-body-color);
     border-radius: 10px;
     padding: 20px;
     max-width: 900px;
     min-height: 350px;
     width: 100%;
-    box-shadow: 17px 14px 16px 3px #000;
+    box-shadow: 17px 14px 16px 3px var(--shadow-color);
     gap: 20px;
     justify-content: space-evenly;
 }
@@ -154,7 +173,7 @@ nav {
     flex-direction: column;
     gap: 5px;
     font-size: 1rem;
-    color: #fff;
+    color: var(--text-color);
 }
 
 /* ====== ABOUT ====== */
@@ -162,17 +181,17 @@ nav {
     
     border-radius: 10px;
     max-width: 900px;
-    color: #fff;
+    color: var(--text-color);
     margin-top: 50%;
     padding: 20px;
     padding-bottom: 25%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--target-body-color);
     
 }
 .about-text {
     font-size: 1rem;
     line-height: 1.5;
-    color: #ddd;
+    color: var(--secondary-color);
     margin-top: 20px;
     text-align: justify;
 }
@@ -234,7 +253,7 @@ nav {
     width: 100%;
     border-radius: 15px;
     object-fit: contain;
-    background-color: #000000;
+    background-color: var(--background-color);
     padding: 10px;
     height: auto; 
     min-width: 300px;
@@ -269,32 +288,39 @@ nav {
     width: 100%;
 }
 .projects-list :hover {
-    transition: 1s;
+     transition: 1s;
     transform: scale(1.05);
     background-color: rgba(255, 255, 255, 0.336);
-
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
 }
 .project-item {
     transition: 1s;
-    background-color: #000000bb;
+    background-color: var(--target-body-color);
     border-radius: 15px;
     padding: 20px;
     
 }
 .project-item :hover {
     background-color: rgba(0, 0, 0, 0);
-
 }
 .projects-image {
-    transition: 1s;
     width: 100%;
-    object-fit: contain;
     padding: 10px;
     height: auto;
-    border-radius: 30px;
     min-width: 300px;
+    ;
 }
-
+.description-projects{
+    bottom: 0;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-top: 10px;
+    text-align: justify;
+}
+.description-projectsa :hover{
+    display: inline;
+    transition: 0.3s;
+}
 .more-projects {
     grid-row: 3;
     grid-column: 1 / 3;
@@ -305,14 +331,15 @@ nav {
     align-items: stretch;
     gap: 20px;
     padding: 20px;
-    background-color: #000000bb;
+    background-color: var(--target-body-color);
     border-radius: 10px;
     max-width: 900px;
     width: 100%;
-    box-shadow: 17px 20px 9px #000;
+    box-shadow: 17px 20px 9px var(--shadow-color);
     justify-content: space-between;
     flex-direction: row;
     min-width: 400px;
+    align-items: flex-start;
 }
 .contact {
     display: flex;
@@ -328,9 +355,9 @@ form textarea, form input button {
     width: 100%;
     padding: 10px;
     border-radius: 10px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-    color: #000;
+    border: 1px solid var(--text-color);
+    background-color: var(--secondary-color);
+    color: var(--background-color);
     font-size: 1rem;
 }
 form button {
@@ -339,8 +366,8 @@ form button {
     cursor: pointer;
 }
 form button:hover {
-    background-color: #00a2ff;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     transition: 0.3s;
 }
 form button {
@@ -351,8 +378,8 @@ form button {
   border: none;
   cursor: pointer;
   background: none;
-  color: white;
-  background: linear-gradient(90deg, #00a2ff 50%, white 50%);
+  color: var(--text-color);
+  background: linear-gradient(90deg, var(--primary-color) 50%, var(--secondary-color) 50%);
   background-size: 200%;
   background-position: right;
   -webkit-background-clip: text;
@@ -368,7 +395,7 @@ form button::after {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #00a2ff;
+  background-color: var(--primary-color);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
@@ -387,19 +414,17 @@ footer {
     padding: 40px 10px;
     font-size: 0.9rem;
     color: #aaa;
-    background-color: #000000;
+    background-color: var(--background-color);
 }
 
 .styles-media {
   position: relative;
   display: inline-block;
   font-size: 1rem;
-  color: white;
+  color: var(--text-color);
   padding: 5px;
   cursor: pointer;
-
-  /* Para el efecto de color progresivo en texto si lo deseas */
-  background: linear-gradient(90deg, #00a2ff 50%, white 50%);
+  background: linear-gradient(90deg, var(--primary-color) 50%, var(--secondary-color) 50%);
   background-size: 200%;
   background-position: right;
   -webkit-background-clip: text;
@@ -415,7 +440,7 @@ footer {
   left: 0;
   height: 2px;
   width: 100%;
-  background-color: #00a2ff;
+  background-color: var(--primary-color);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
