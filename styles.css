@@ -11,7 +11,7 @@
     --primary-color: #00A2FF;
     --secondary-color: #fff;
     --background-color: #000;
-    --text-color: #ddd;
+    --text-color: #cecece;
     --link-color: #00A2FF;
     --hover-color: rgba(0, 162, 255, 0.7);
     --shadow-color: rgba(0, 0, 0, 0.5);
@@ -40,6 +40,8 @@ h1, h2 {
   margin-bottom: 10px;
   padding-bottom: 5px;
   text-align: center;
+  width: 100%;
+  color: var(--secondary-color);
 }
 
 /* ====== BODY ====== */
@@ -89,7 +91,7 @@ nav {
 
 .nav-links a {
   position: relative;
-  color: var(--link-color);
+  color: var(--text-color);
   transition: 0.3s;
   font-size: 0.9rem;
   padding: 5px;
@@ -191,7 +193,7 @@ nav {
 .about-text {
     font-size: 1rem;
     line-height: 1.5;
-    color: var(--secondary-color);
+    color: var(--text-color);
     margin-top: 20px;
     text-align: justify;
 }
@@ -280,7 +282,7 @@ nav {
     max-width: 900px;
 }
 .projects-list {
-    transition: 1s;
+    transition: 1s;              
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -288,27 +290,28 @@ nav {
     width: 100%;
 }
 .projects-list :hover {
-     transition: 1s;
-    transform: scale(1.05);
+    transition: 1s;
+    transform: scale(1.03);
     background-color: rgba(255, 255, 255, 0.336);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
+}
+.projects-list > li > div :hover {
+    transform: scale(1.00);
 }
 .project-item {
     transition: 1s;
     background-color: var(--target-body-color);
     border-radius: 15px;
     padding: 20px;
-    
 }
 .project-item :hover {
     background-color: rgba(0, 0, 0, 0);
-}
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);}
 .projects-image {
     width: 100%;
     padding: 10px;
     height: auto;
     min-width: 300px;
-    ;
 }
 .description-projects{
     bottom: 0;
@@ -328,7 +331,6 @@ nav {
 /* ====== CONTACT ====== */
 #contact {
     display: flex;
-    align-items: stretch;
     gap: 20px;
     padding: 20px;
     background-color: var(--target-body-color);
@@ -337,9 +339,9 @@ nav {
     width: 100%;
     box-shadow: 17px 20px 9px var(--shadow-color);
     justify-content: space-between;
-    flex-direction: row;
+    flex-direction: column;
     min-width: 400px;
-    align-items: flex-start;
+    align-items: center;
 }
 .contact {
     display: flex;
@@ -349,7 +351,6 @@ nav {
     padding-bottom: 25%;
     align-items: center;
     flex-wrap: wrap;
-    padding-right: 40%;
 }
 form textarea, form input button {
     width: 100%;
@@ -547,6 +548,14 @@ footer {
 
     body {
         padding-top: 60px;
+    }
+    main {
+        padding: 10%;
+        gap: 30px;
+    }
+    .about-text {
+        font-size: 0.9rem;
+        line-height: 1.4;
     }
     #titulation,#projects {
         flex-direction: column;
